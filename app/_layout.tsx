@@ -1,25 +1,6 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-// StatusBar yahan se hata diya gaya hai
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
 import "../global.css";
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      {/* Yeh global StatusBar yahan se delete kar diya hai */}
-    </ThemeProvider>
-  );
+  return <Stack />;
 }
